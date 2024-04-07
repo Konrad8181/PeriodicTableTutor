@@ -3,6 +3,16 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div id="index_title">
+        <p class="large_font">Periodic Table</p>
+        <div>
+            <p style="margin-bottom:2cm;"></p>
+        </div>
+        <p class="small_font">Mendeleev's Periodic Table of Elements</p>
+    </div> 
+    <ul id="menu"> 
+       <li>
+            @Html.ActionLink("Elements table", "ElementsTable", "Home")
+       </li>
+    </ul>
 </div>
