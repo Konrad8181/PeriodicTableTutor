@@ -6,13 +6,19 @@
     <div id="index_title">
         <p class="large_font">Periodic Table</p>
         <div>
-            <p style="margin-bottom:2cm;"></p>
+            <p style="margin-bottom:1cm;"></p>
         </div>
         <p class="small_font">Mendeleev's Periodic Table of Elements</p>
     </div> 
-    <ul id="menu"> 
-       <li>
-            @Html.ActionLink("Elements table", "ElementsTable", "Home")
+        <div>
+            <p style="margin-bottom:3cm;"></p>
+        </div>
+    <ul class="ulm" id="menu"> 
+       <li class="lim">
+            @Html.ActionLink("Elements table", "ElementsTable", "Home", null, new {style="text-decoration:none; color: Black;"})
        </li>
     </ul>
+</div> 
+<div id="Footer"> 
+    <p style="margin: 5px 10px 0px 10px">Konrad Zareba - 2024 </p>
 </div>

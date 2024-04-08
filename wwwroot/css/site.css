@@ -12,6 +12,16 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
+#Footer
+{
+    border-radius: 15px 15px 0px 0px;
+    position: fixed;
+    bottom: 0px;
+    height: 30px; 
+    background-color: #666;
+    color: #eee;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -20,3 +30,36 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.huge_font {
+    font-size: 300px;
+}
+
+.large_font {
+font-size: 90px;
+padding-bottom: 0px;
+line-height: 0.7;
+margin-top: 30px;
+}
+
+.medium_font {
+font-size: 60px;
+font-weight: 100;
+}
+
+.small_font {
+font-size: 20px;
+} 
+
+.ulm {
+  padding-left: 2rem;
+  list-style-type: none;
+}
+
+.lim{
+  padding-left: 0rem;
+  background-image: url(bullet.png);
+  background-position: 0 0;
+  background-size: 1.6rem 1.6rem;
+  background-repeat: no-repeat;
+} 
