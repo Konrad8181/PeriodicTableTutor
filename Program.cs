@@ -1,7 +1,11 @@
+using PeriodicTableTutor.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+builder.Services.AddSingleton<ElementModel>();
 
 var app = builder.Build();
 
