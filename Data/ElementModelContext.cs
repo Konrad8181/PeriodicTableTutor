@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using PeriodicTableTutor.Models;
+using PeriodicTableTutor.Models.Entities;
 
 namespace PeriodicTableTutor.Data
 {

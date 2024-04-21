@@ -3,4 +3,18 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Periodic table elements.</p>
+<p>Periodic table elements.</p> 
+
+@foreach (var element in Model)
+{
+    <span id="up">
+        @element.Protons
+    </span>
+    <span id="down">
+        @element.MassNumber
+    </span>
+    <span class="large_font">
+        @element.ShortName
+    </span> 
+    <hr>
+}

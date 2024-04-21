@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PeriodicTableTutor.Data;
-using PeriodicTableTutor.Models;
+using PeriodicTableTutor.Models.Entities;
 using PeriodicTableTutor.Services;
 
 var builder = WebApplication.CreateBuilder(args);

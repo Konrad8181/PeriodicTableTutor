@@ -21,13 +21,27 @@ namespace PeriodicTableTutor.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("PeriodicTableTutor.Models.ElementModel", b =>
+            modelBuilder.Entity("PeriodicTableTutor.Models.Entities.ElementModel", b =>
                 {
-                    b.Property<int>("AtomicNumber")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("AtomicMass")
+                        .HasColumnType("float");
 
                     b.Property<double>("Density")
                         .HasColumnType("float");
+
+                    b.Property<string>("Discoverer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Electrons")
+                        .HasMaxLength(3)
+                        .HasColumnType("int");
 
                     b.Property<string>("LatinName")
                         .IsRequired()
@@ -36,27 +50,30 @@ namespace PeriodicTableTutor.Migrations
                     b.Property<int>("MassNumber")
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Neutrons")
+                        .HasMaxLength(3)
+                        .HasColumnType("int");
+
+                    b.Property<int>("Phase")
                         .HasColumnType("int");
 
                     b.Property<int>("Protons")
+                        .HasMaxLength(3)
                         .HasColumnType("int");
 
                     b.Property<string>("ShortName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(2)
+                        .HasColumnType("nvarchar(2)");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Type")
+                        .HasMaxLength(24)
+                        .HasColumnType("int");
 
-                    b.Property<string>("YearOfDiscover")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Elements");
                 });
