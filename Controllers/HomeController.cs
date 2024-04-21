@@ -1,6 +1,7 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PeriodicTableTutor.Models;
+using PeriodicTableTutor.Services;
+using System.Diagnostics;
 
 namespace PeriodicTableTutor.Controllers;
 
@@ -8,8 +9,11 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    private readonly ElementsController _elementsController;
+
+    public HomeController(ILogger<HomeController> logger, ElementsController elementsController)
     {
+        _elementsController = elementsController;
         _logger = logger;
     }
 
@@ -19,12 +23,6 @@ public class HomeController : Controller
     }
 
     public IActionResult Privacy()
-    { 
-        return View();
-    } 
-    
-    [HttpGet]
-    public IActionResult ElementsTable()
     {
         return View();
     }

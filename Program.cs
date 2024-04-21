@@ -1,11 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using PeriodicTableTutor.Data;
 using PeriodicTableTutor.Models;
+using PeriodicTableTutor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
+
 builder.Services.AddSingleton<ElementModel>();
+builder.Services.AddDbContext<ElementModelContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ElementsDatabase")));
+builder.Services.AddScoped<ElementsController>();
 
 var app = builder.Build();
 
