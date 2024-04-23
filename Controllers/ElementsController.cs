@@ -24,13 +24,26 @@ namespace PeriodicTableTutor.Services
             DatabaseSanityCheck();
         }
 
-        private void DatabaseSanityCheck()
+        public IActionResult ElementsTable() => View(Elements);
+
+        public IActionResult SpecificElements(string type) => View(GetElements(type).ToList());
+
+        private IEnumerable<ElementModel> GetElements(string type)
         {
-            if (!Elements.Any())
+            if (Enum.TryParse(type, out EElementType elementType))
             {
-                DownloadFile();
+                if (elementType == EElementType.All)
+                {
+                    return Elements;
+                }
+                return Elements.Where(x => x.Type == elementType);
+            }
+            else
+            {
+                return Elements;
             }
         }
+
         public void DownloadFile()
         {
             var client = new WebClient();
@@ -81,6 +94,14 @@ namespace PeriodicTableTutor.Services
             }
         }
 
+        private void DatabaseSanityCheck()
+        {
+            if (!Elements.Any())
+            {
+                DownloadFile();
+            }
+        }
+
         private ElementModel CreateNewElement(
             string shortName,
             string name,
@@ -117,11 +138,6 @@ namespace PeriodicTableTutor.Services
         {
             _dbContext.Elements.Add(element);
             _dbContext.SaveChanges();
-        }
-
-        public IActionResult ElementsTable()
-        {
-            return View(Elements);
         }
 
         private void OnSaveChangesFailed(object? sender, SaveChangesFailedEventArgs e)

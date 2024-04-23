@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Elements page";
+} 
+ 
+<p class="huge_font">@Model[0].TypeDescription</p>
+<div class="@Model[0].Type">
+</div>
+<p class="medium_font">@(String.Format("{0} {1}", "Number of elements:", @Model.Count))</p>
+<div></div>
+
+@foreach (var element in Model)
+{
+    <span id="up">
+        @element.Protons
+    </span>
+    <span id="down">
+        @element.MassNumber
+    </span>
+    <span class="large_font">
+        @element.ShortName
+    </span> 
+    <hr>
+}

@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-}
-
+}  
 <div class="text-center">
     <div id="index_title">
         <p class="large_font">Periodic Table</p>
@@ -16,9 +15,43 @@
     <ul class="ulm" id="menu"> 
        <li class="lim">
             @Html.ActionLink("Elements table","ElementsTable", "Elements", null, new {style="text-decoration:none; color: Black;"})
-       </li>
+        </li> 
+        <li class="lim">
+            @Html.ActionLink("Metals", "SpecificElements", "Elements", new { type = "Metal" }, new { style = "text-decoration:none; color: Black;" })
+        </li>
+        <li class="lim">
+            @Html.ActionLink("Nonmetals", "SpecificElements", "Elements", new { type = "Nonmetal" }, new { style = "text-decoration:none; color: Black;" })
+        </li>
+        <li class="lim">
+            @Html.ActionLink("Metalloid", "SpecificElements", "Elements", new { type = "Metalloid" }, new { style = "text-decoration:none; color: Black;" })
+        </li>
+        <li class="lim">
+            @Html.ActionLink("NobleGas", "SpecificElements", "Elements", new { type = "NobleGas" }, new { style = "text-decoration:none; color: Black;" })
+        </li>
+        <li class="lim">
+            @Html.ActionLink("AlkaliMetal", "SpecificElements", "Elements", new { type = "AlkaliMetal" }, new { style = "text-decoration:none; color: Black;" })
+        </li>
+        <li class="lim">
+            @Html.ActionLink("AlkalineEarthMetal", "SpecificElements", "Elements", new { type = "AlkalineEarthMetal" }, new { style = "text-decoration:none; color: Black;" })
+        </li>
+        <li class="lim">
+            @Html.ActionLink("Halogen", "SpecificElements", "Elements", new { type = "Halogen" }, new { style = "text-decoration:none; color: Black;" })
+        </li>
+        <li class="lim">
+            @Html.ActionLink("TransitionMetal", "SpecificElements", "Elements", new { type = "TransitionMetal" }, new { style = "text-decoration:none; color: Black;" })
+        </li>
+        <li class="lim">
+            @Html.ActionLink("Lanthanide", "SpecificElements", "Elements", new { type = "Lanthanide" }, new { style = "text-decoration:none; color: Black;" })
+        </li>
+        <li class="lim">
+            @Html.ActionLink("Actinide", "SpecificElements", "Elements", new { type = "Actinide" }, new { style = "text-decoration:none; color: Black;" })
+        </li>
+        <li class="lim">
+            @Html.ActionLink("Transactinide", "SpecificElements", "Elements", new { type = "Transactinide" }, new { style = "text-decoration:none; color: Black;" })
+        </li> 
     </ul>
-</div> 
+</div>  
+
 <div id="Footer"> 
     <p style="margin: 5px 10px 0px 10px">Konrad Zareba - 2024 </p>
 </div>

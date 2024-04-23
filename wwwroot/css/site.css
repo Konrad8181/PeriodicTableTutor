@@ -32,7 +32,7 @@ body {
 }
 
 .huge_font {
-    font-size: 300px;
+    font-size: 140px;
 }
 
 .large_font {
@@ -73,3 +73,9 @@ font-size: 20px;
     text-align: left;
     font-size: 20px;
 }
+
+.Metal {
+    width: 100%;
+    height: 10px;
+    background-color: #019aff;
+} 
