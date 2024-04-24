@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-}  
+}
 <div class="text-center">
     <div id="index_title">
         <p class="large_font">Periodic Table</p>
@@ -9,49 +9,120 @@
         </div>
         <p class="small_font">Mendeleev's Periodic Table of Elements</p>
     </div> 
-        <div>
-            <p style="margin-bottom:3cm;"></p>
-        </div>
-    <ul class="ulm" id="menu"> 
-       <li class="lim">
-            @Html.ActionLink("Elements table","ElementsTable", "Elements", null, new {style="text-decoration:none; color: Black;"})
-        </li> 
-        <li class="lim">
-            @Html.ActionLink("Metals", "SpecificElements", "Elements", new { type = "Metal" }, new { style = "text-decoration:none; color: Black;" })
-        </li>
-        <li class="lim">
-            @Html.ActionLink("Nonmetals", "SpecificElements", "Elements", new { type = "Nonmetal" }, new { style = "text-decoration:none; color: Black;" })
-        </li>
-        <li class="lim">
-            @Html.ActionLink("Metalloid", "SpecificElements", "Elements", new { type = "Metalloid" }, new { style = "text-decoration:none; color: Black;" })
-        </li>
-        <li class="lim">
-            @Html.ActionLink("NobleGas", "SpecificElements", "Elements", new { type = "NobleGas" }, new { style = "text-decoration:none; color: Black;" })
-        </li>
-        <li class="lim">
-            @Html.ActionLink("AlkaliMetal", "SpecificElements", "Elements", new { type = "AlkaliMetal" }, new { style = "text-decoration:none; color: Black;" })
-        </li>
-        <li class="lim">
-            @Html.ActionLink("AlkalineEarthMetal", "SpecificElements", "Elements", new { type = "AlkalineEarthMetal" }, new { style = "text-decoration:none; color: Black;" })
-        </li>
-        <li class="lim">
-            @Html.ActionLink("Halogen", "SpecificElements", "Elements", new { type = "Halogen" }, new { style = "text-decoration:none; color: Black;" })
-        </li>
-        <li class="lim">
-            @Html.ActionLink("TransitionMetal", "SpecificElements", "Elements", new { type = "TransitionMetal" }, new { style = "text-decoration:none; color: Black;" })
-        </li>
-        <li class="lim">
-            @Html.ActionLink("Lanthanide", "SpecificElements", "Elements", new { type = "Lanthanide" }, new { style = "text-decoration:none; color: Black;" })
-        </li>
-        <li class="lim">
-            @Html.ActionLink("Actinide", "SpecificElements", "Elements", new { type = "Actinide" }, new { style = "text-decoration:none; color: Black;" })
-        </li>
-        <li class="lim">
-            @Html.ActionLink("Transactinide", "SpecificElements", "Elements", new { type = "Transactinide" }, new { style = "text-decoration:none; color: Black;" })
-        </li> 
-    </ul>
-</div>  
+</div>
 
-<div id="Footer"> 
+<div id="gridFlatContainer">
+
+    <div class="col-md-2-cell cell-1" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Metal" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">ME</span>
+                <div class="Metal"></div>
+                <span id="subText">Metals</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2-cell cell-2" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Nonmetal" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">NE</span>
+                <div class="Nonmetal"></div>
+                <span id="subText">Nonmetals</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2-cell cell-3" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Metalloid" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">ML</span>
+                <div class="Metalloid"></div>
+                <span id="subText">Metalloids</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2-cell cell-4" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "NobleGas" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">NG</span>
+                <div class="NobleGas"></div>
+                <span id="subText">Noble gases</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2-cell cell-5" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "AlkaliMetal" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">AM</span>
+                <div class="AlkaliMetal"></div>
+                <span id="subText">Alkali metals</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2-cell cell-6" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "AlkalineEarthMetal" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">AM</span>
+                <div class="AlkalineEarthMetal"></div>
+                <span id="subText">Alkali earth metals</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2-cell cell-7" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Halogen" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">HL</span>
+                <div class="Halogen"></div>
+                <span id="subText">Halogens</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2-cell cell-8" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "TransitionMetal" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">TM</span>
+                <div class="TransitionMetal"></div>
+                <span id="subText">Transition metals</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2-cell cell-9" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Lanthanide" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">LT</span>
+                <div class="Lanthanide"></div>
+                <span id="subText">Lanthanides</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2-cell cell-10" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "AlkaliMetal" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">AM</span>
+                <div class="AlkaliMetal"></div>
+                <span id="subText">Alkali metals</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2-cell cell-11" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Actinide" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">AC</span>
+                <div class="Actinide"></div>
+                <span id="subText">Actinides</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2-cell cell-12" id="flatElementButton">
+        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Transactinide" })" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">TR</span>
+                <div class="Transactinide"></div>
+                <span id="subText">Transactinidels</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div id="Footer">
     <p style="margin: 5px 10px 0px 10px">Konrad Zareba - 2024 </p>
 </div>
