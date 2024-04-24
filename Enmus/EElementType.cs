@@ -12,7 +12,6 @@
         TransitionMetal,
         Lanthanide,
         Actinide,
-        Transactinide,
-        All
+        Transactinide
     }
 }

@@ -32,10 +32,6 @@ namespace PeriodicTableTutor.Services
         {
             if (Enum.TryParse(type, out EElementType elementType))
             {
-                if (elementType == EElementType.All)
-                {
-                    return Elements;
-                }
                 return Elements.Where(x => x.Type == elementType);
             }
             else
