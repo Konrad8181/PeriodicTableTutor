@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using PeriodicTableTutor.Enmus;
 using PeriodicTableTutor.Models;
 using PeriodicTableTutor.Services;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace PeriodicTableTutor.Controllers;
 
@@ -14,12 +16,25 @@ public class HomeController : Controller
 
     public List<ElementDescriptor> Descriptors { get; set; }
 
-    public HomeController(ILogger<HomeController> logger, ElementsController elementsController)
+    private readonly IStringLocalizer<HomeController> _localizer;
+
+    public HomeController(ILogger<HomeController> logger,
+        ElementsController elementsController,
+        IStringLocalizer<HomeController> localizer)
     {
         _elementsController = elementsController;
         _logger = logger;
+        _localizer = localizer;
         Descriptors = [];
         CreateDescriptors();
+    }
+
+    public IActionResult SetLanguage(string language, string returnUrl)
+    {
+        var cultureInfo = new CultureInfo(language);
+        CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+        CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+        return LocalRedirect(returnUrl);
     }
 
     public IActionResult Index()
@@ -30,13 +45,6 @@ public class HomeController : Controller
     public IActionResult Privacy()
     {
         return View();
-    }
-
-    public IActionResult Test(string SearchString)
-    {
-        ViewData["CurrentFilter"] = SearchString;
-        return View(Descriptors);
-
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

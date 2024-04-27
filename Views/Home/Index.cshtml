@@ -1,13 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = @Localizer["PeriodicTable"];
 }
+@using Microsoft.AspNetCore.Mvc.Localization 
+@inject IViewLocalizer Localizer
+ 
 <div class="text-center">
     <div id="index_title">
-        <p class="large_font">Periodic Table</p>
+        <p class="large_font">@Localizer["PeriodicTable"]</p>
         <div>
             <p style="margin-bottom:1cm;"></p>
         </div>
-        <p class="small_font">Mendeleev's Periodic Table of Elements</p>
+        <p class="small_font">@Localizer["MendelPeriodicTable"]</p>
     </div> 
 </div>
 
@@ -29,10 +32,10 @@
 
 <form method="get" action="/Elements/SearchElements"> 
     <td>
-        <input class="form-control" type="text" placeholder="Search for..." name="SearchString" value="@ViewData["CurrentFilter"]" aria-label="Search" aria-describedby="btnNavbarSearch" />
+        <input class="form-control" type="text" placeholder=@Localizer["SearchFor"] name="SearchString" value="@ViewData["CurrentFilter"]" aria-label="Search" aria-describedby="btnNavbarSearch" />
     </td>
     <td>
-        <input type="submit" value="Search" class="btn btn-primary" />
+        <input type="submit" value=@Localizer["Search"] class="btn btn-primary" />
     </td>
 </form>
 
