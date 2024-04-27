@@ -1,7 +1,7 @@
 using PeriodicTableTutor.Enmus;
+using PeriodicTableTutor.Extensions;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.RegularExpressions;
 
 namespace PeriodicTableTutor.Models.Entities
 {
@@ -53,8 +53,6 @@ namespace PeriodicTableTutor.Models.Entities
         public string Discoverer { get; set; }
 
         [NotMapped]
-        public string TypeDescription => ToSentenceCase(Type.ToString());
-
-        public string ToSentenceCase(string str) => Regex.Replace(str, "[a-z][A-Z]", m => m.Value[0] + " " + char.ToLower(m.Value[1]));
+        public string TypeDescription => Type.ToString().ToSentenceCase();
     }
 }

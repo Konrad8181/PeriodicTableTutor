@@ -11,117 +11,30 @@
     </div> 
 </div>
 
-<div id="gridFlatContainer">
-
-    <div class="col-md-2-cell cell-1" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Metal" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">ME</span>
-                <div class="Metal"></div>
-                <span id="subText">Metals</span>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-2-cell cell-2" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Nonmetal" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">NE</span>
-                <div class="Nonmetal"></div>
-                <span id="subText">Nonmetals</span>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-2-cell cell-3" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Metalloid" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">ML</span>
-                <div class="Metalloid"></div>
-                <span id="subText">Metalloids</span>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-2-cell cell-4" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "NobleGas" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">NG</span>
-                <div class="NobleGas"></div>
-                <span id="subText">Noble gases</span>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-2-cell cell-5" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "AlkaliMetal" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">AM</span>
-                <div class="AlkaliMetal"></div>
-                <span id="subText">Alkali metals</span>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-2-cell cell-6" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "AlkalineEarthMetal" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">AM</span>
-                <div class="AlkalineEarthMetal"></div>
-                <span id="subText">Alkali earth metals</span>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-2-cell cell-7" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Halogen" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">HL</span>
-                <div class="Halogen"></div>
-                <span id="subText">Halogens</span>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-2-cell cell-8" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "TransitionMetal" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">TM</span>
-                <div class="TransitionMetal"></div>
-                <span id="subText">Transition metals</span>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-2-cell cell-9" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Lanthanide" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">LT</span>
-                <div class="Lanthanide"></div>
-                <span id="subText">Lanthanides</span>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-2-cell cell-10" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "AlkaliMetal" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">AM</span>
-                <div class="AlkaliMetal"></div>
-                <span id="subText">Alkali metals</span>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-2-cell cell-11" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Actinide" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">AC</span>
-                <div class="Actinide"></div>
-                <span id="subText">Actinides</span>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-2-cell cell-12" id="flatElementButton">
-        <a href="@Url.Action("SpecificElements", "Elements", new { type = "Transactinide" })" style="text-decoration:none; color: Black;">
-            <div>
-                <span id="mainText">TR</span>
-                <div class="Transactinide"></div>
-                <span id="subText">Transactinidels</span>
-            </div>
-        </a>
-    </div>
+<div id="gridFlatContainer"> 
+    @foreach (var element in Model)
+    {
+        <div class=@(String.Format("col-md-2-cell cell-{0}", @element.Index)) id="flatElementButton">
+            <a href="@Url.Action("SpecificElements", "Elements", new { type = @element.Type })" style="text-decoration:none; color: Black;">
+                <div>
+                    <span id="mainText">@element.ShortName</span>
+                    <div class=@element.Type></div>
+                    <span id="subText">@element.Description</span>
+                </div>
+            </a>
+        </div>
+    } 
 </div>
+
+
+<form method="get" action="/Elements/SearchElements"> 
+    <td>
+        <input class="form-control" type="text" placeholder="Search for..." name="SearchString" value="@ViewData["CurrentFilter"]" aria-label="Search" aria-describedby="btnNavbarSearch" />
+    </td>
+    <td>
+        <input type="submit" value="Search" class="btn btn-primary" />
+    </td>
+</form>
 
 <div id="Footer">
     <p style="margin: 5px 10px 0px 10px">Konrad Zareba - 2024 </p>

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Search elements page";
+} 
+ 
+<p class="huge_font">Found elements</p>
+<p class="medium_font">@(String.Format("For phrase \"{0}\"", @ViewData["SearchString"]))</p>
+<div class="Search">
+</div>
+<p class="medium_font">@(String.Format("Number of elements: {0}", @Model.Count))</p>
+<div></div>
+
+@foreach (var element in Model)
+{
+    <span id="up">
+        @element.Protons
+    </span>
+    <span id="down">
+        @element.MassNumber
+    </span>
+    <span class="large_font">
+        @element.ShortName
+    </span> 
+    <hr>
+}

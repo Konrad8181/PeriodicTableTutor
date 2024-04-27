@@ -11,6 +11,8 @@ namespace PeriodicTableTutor.Services
 {
     public class ElementsController : Controller
     {
+        private const string ElementsRepositoryFallbackAddress = "https://gist.githubusercontent.com/GoodmanSciences/c2dd862cd38f21b0ad36b8f96b4bf1ee/raw/1d92663004489a5b6926e944c1b3d9ec5c40900e/Periodic%2520Table%2520of%2520Elements.csv";
+
         private readonly ElementModelContext _dbContext;
 
         public ICollection<ElementModel> Elements { get; private set; }
@@ -28,6 +30,13 @@ namespace PeriodicTableTutor.Services
 
         public IActionResult SpecificElements(string type) => View(GetElements(type).ToList());
 
+        public IActionResult SearchElements(string searchString)
+        {
+            ViewData["SearchString"] = searchString;
+            return View(Elements.Where(x => x.LatinName.ToLowerInvariant().Contains(searchString.ToLowerInvariant())).ToList());
+
+        }
+
         private IEnumerable<ElementModel> GetElements(string type)
         {
             if (Enum.TryParse(type, out EElementType elementType))
@@ -43,7 +52,7 @@ namespace PeriodicTableTutor.Services
         public void DownloadFile()
         {
             var client = new WebClient();
-            var data = client.DownloadData("https://gist.githubusercontent.com/GoodmanSciences/c2dd862cd38f21b0ad36b8f96b4bf1ee/raw/1d92663004489a5b6926e944c1b3d9ec5c40900e/Periodic%2520Table%2520of%2520Elements.csv");
+            var data = client.DownloadData(ElementsRepositoryFallbackAddress);
             var lines = Encoding.Default.GetString(data).Split('\n');
             var headers = lines[0].Split(',').ToList();
             foreach (var line in lines.Skip(1))
@@ -92,7 +101,7 @@ namespace PeriodicTableTutor.Services
 
         private void DatabaseSanityCheck()
         {
-            if (!Elements.Any())
+            if (Elements.Count == 0)
             {
                 DownloadFile();
             }
