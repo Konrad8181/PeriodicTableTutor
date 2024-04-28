@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = @Localizer["PeriodicTable"];
+    ViewData["Language"] = @Localizer["Language"];
 }
 @using Microsoft.AspNetCore.Mvc.Localization 
 @inject IViewLocalizer Localizer
@@ -22,7 +23,7 @@
                 <div>
                     <span id="mainText">@element.ShortName</span>
                     <div class=@element.Type></div>
-                    <span id="subText">@element.Description</span>
+                    <span id="subText">@Localizer[@element.Description]</span>
                 </div>
             </a>
         </div>

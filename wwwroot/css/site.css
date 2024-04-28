@@ -31,8 +31,12 @@ body {
   margin-bottom: 60px;
 }
 
+p {
+    display: inline-block;
+} 
+
 .huge_font {
-    font-size: 140px;
+    font-size: 130px;
 }
 
 .large_font {

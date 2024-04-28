@@ -1,12 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Search elements page";
-} 
+    ViewData["Title"] = @Localizer["ElementsPage"];
+    ViewData["Language"] = @Localizer["Language"];
+}
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
  
-<p class="huge_font">Found elements</p>
-<p class="medium_font">@(String.Format("For phrase \"{0}\"", @ViewData["SearchString"]))</p>
+<p class="huge_font">@Localizer["FoundElements"]</p>
+
+<div>
+    <p class="medium_font">@Localizer["ForPhrase"]</p>
+    <p class="medium_font">@("\"")</p>
+    <p class="medium_font">@ViewData["SearchString"]</p>
+    <p class="medium_font">@("\"")</p>
+</div>
 <div class="Search">
 </div>
-<p class="medium_font">@(String.Format("Number of elements: {0}", @Model.Count))</p>
+<div>
+    <p class="medium_font">@Localizer["NumberOfElements"]</p>
+    <p class="medium_font">@Model.Count</p>
+</div> 
 <div></div>
 
 @foreach (var element in Model)

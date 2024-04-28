@@ -126,6 +126,15 @@
   <data name="Alkaline earth metal" xml:space="preserve">
     <value>Alkaline earth metals</value>
   </data>
+  <data name="ElementsPage" xml:space="preserve">
+    <value>Elements Page</value>
+  </data>
+  <data name="ForPhrase" xml:space="preserve">
+    <value>For phrase&amp;nbsp;</value>
+  </data>
+  <data name="FoundElements" xml:space="preserve">
+    <value>Found elements</value>
+  </data>
   <data name="Halogen" xml:space="preserve">
     <value>Halogens</value>
   </data>
@@ -149,6 +158,9 @@
   </data>
   <data name="Nonmetal" xml:space="preserve">
     <value>Nonmetals</value>
+  </data>
+  <data name="NumberOfElements" xml:space="preserve">
+    <value>Number of elements:&amp;nbsp;</value>
   </data>
   <data name="PeriodicTable" xml:space="preserve">
     <value>Periodic Table</value>

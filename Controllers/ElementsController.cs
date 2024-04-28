@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Localization;
 using PeriodicTableTutor.Data;
 using PeriodicTableTutor.Enmus;
 using PeriodicTableTutor.Models.Entities;
@@ -17,7 +18,7 @@ namespace PeriodicTableTutor.Services
 
         public ICollection<ElementModel> Elements { get; private set; }
 
-        public ElementsController(ElementModelContext elementModelContext)
+        public ElementsController(ElementModelContext elementModelContext, IStringLocalizer<ElementsController> localizer)
         {
             _dbContext = elementModelContext;
             Elements = new List<ElementModel>(_dbContext.Elements);
@@ -34,7 +35,6 @@ namespace PeriodicTableTutor.Services
         {
             ViewData["SearchString"] = searchString;
             return View(Elements.Where(x => x.LatinName.ToLowerInvariant().Contains(searchString.ToLowerInvariant())).ToList());
-
         }
 
         private IEnumerable<ElementModel> GetElements(string type)
