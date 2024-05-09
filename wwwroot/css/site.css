@@ -53,7 +53,26 @@ font-weight: 100;
 
 .small_font {
 font-size: 20px;
-} 
+}
+ 
+
+.number-container {
+    display: inline-block; 
+    padding: 0px;
+    margin: 10px 5px;
+    position: relative;
+    text-align: right;
+}
+
+.mass-number {
+    font-size: 28px;
+    margin: 0px 0px 10px -10px;
+}
+
+.atomic-number {
+    font-size: 20px;
+    margin: 0px 0px 10px -0px;
+}
 
 .ulm {
   padding-left: 2rem;

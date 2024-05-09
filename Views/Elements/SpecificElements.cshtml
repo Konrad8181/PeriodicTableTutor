@@ -4,27 +4,31 @@
 }
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
- 
+
 <p class="huge_font">@Localizer[@Model[0].TypeDescription]</p>
 <div class="@Model[0].Type">
 </div>
 
 <div>
-    <p class="medium_font">@Localizer["NumberOfElements"]</p> 
+    <p class="medium_font">@Localizer["NumberOfElements"]</p>
     <p class="medium_font">@Model.Count</p>
 </div>
 <div></div>
 
 @foreach (var element in Model)
 {
-    <span id="up">
-        @element.Protons
-    </span>
-    <span id="down">
-        @element.MassNumber
-    </span>
-    <span class="large_font">
-        @element.ShortName
-    </span> 
-    <hr>
+    <a href="@Url.Action("SpecificElement", "Elements", new { name = @element.ShortName })" style="text-decoration:none; color: Black;">
+
+        <div class="number-container">
+            <div class="mass-number">@element.MassNumber</div>
+            <div class="atomic-number">@element.Protons</div>
+        </div>
+        <span class="large_font">
+            @element.ShortName
+        </span>
+        <span class="small_font" style="text-align: center"> 
+            @element.LatinName
+        </span>
+        <hr>
+    </a>
 }
