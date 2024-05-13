@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = @Localizer["ElementPage"];
+    ViewData["Language"] = @Localizer["Language"];
+}
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<p class="huge_font">@Model.LatinName</p>
+<div class="@Model.Type">
+</div>
+
+<div style="margin: -40px 0px 0px 0px;">
+    <p style="font-size: 250px;">
+        @Model.ShortName
+    </p>
+    <p class="large_font" style="text-align: center; margin: 0px 0px 0px 40px">
+        @Model.Type
+    </p>
+</div>
+<div id=content_container>
+    <div id=sub_nav >
+        Protons: @Model.Protons
+    </div>
+    <div id=content>
+        Neutrons: @Model.Neutrons
+    </div>
+    <div id=content>
+        Electrons: @Model.Electrons
+    </div>
+    <div id=content>
+        Atomic mass: @Model.AtomicMass
+    </div>
+    <div id=content>
+        Density: @Model.Density
+    </div>
+</div> 

@@ -31,10 +31,12 @@ namespace PeriodicTableTutor.Services
 
         public IActionResult SpecificElements(string type) => View(GetElements(type).ToList());
 
+        public IActionResult SpecificElement(string name) => View(Elements.First(x => x.ShortName == name));
+
         public IActionResult SearchElements(string searchString)
         {
             ViewData["SearchString"] = searchString;
-            return View(Elements.Where(x => x.LatinName.ToLowerInvariant().Contains(searchString.ToLowerInvariant())).ToList());
+            return View(Elements.Where(x => x.LatinName.Contains(searchString, StringComparison.InvariantCultureIgnoreCase)).ToList());
         }
 
         private IEnumerable<ElementModel> GetElements(string type)
