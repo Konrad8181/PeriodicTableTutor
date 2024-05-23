@@ -29,8 +29,12 @@
                                 @ViewData["Language"]
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
-                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SetLanguage" asp-route-language="pl-PL" asp-route-returnUrl="@Context.Request.Path">Polski</a>
-                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SetLanguage" asp-route-language="en-US" asp-route-returnUrl="@Context.Request.Path">English</a>
+                                @{
+                                    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~"
+        : $"~{Context.Request.Path.Value + Context.Request.QueryString.Value}";
+                                }
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SetLanguage" asp-route-language="pl-PL" asp-route-returnUrl="@returnUrl">Polski</a>
+                                <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SetLanguage" asp-route-language="en-US" asp-route-returnUrl="@returnUrl">English</a>
                             </div>
                         </li>
                     </ul>
