@@ -4,7 +4,36 @@
 }
 @using Microsoft.AspNetCore.Mvc.Localization 
 @inject IViewLocalizer Localizer
- 
+
+
+<div class="periodic-table">
+    <!-- Pierwiastki w pierwszym wierszu -->
+    <div class="element niemetal" data-symbol="H" data-number="1" data-name="Wodór" style="grid-row: 1; grid-column: 1;">H</div>
+    <div class="element gaz-szlachetny" data-symbol="He" data-number="2" data-name="Hel" style="grid-row: 1; grid-column: 18;">He</div>
+
+    <!-- Pierwiastki w drugim wierszu -->
+    <div class="element metal-alkaliczny" data-symbol="Li" data-number="3" data-name="Lit" style="grid-row: 2; grid-column: 1;">Li</div>
+    <div class="element metal-ziem-alkaliczny" data-symbol="Be" data-number="4" data-name="Beryl" style="grid-row: 2; grid-column: 2;">Be</div>
+    <div class="element półmetal" data-symbol="B" data-number="5" data-name="Bor" style="grid-row: 2; grid-column: 13;">B</div>
+    <div class="element niemetal" data-symbol="C" data-number="6" data-name="Węgiel" style="grid-row: 2; grid-column: 14;">C</div>
+    <div class="element niemetal" data-symbol="N" data-number="7" data-name="Azot" style="grid-row: 2; grid-column: 15;">N</div>
+    <div class="element niemetal" data-symbol="O" data-number="8" data-name="Tlen" style="grid-row: 2; grid-column: 16;">O</div>
+    <div class="element niemetal" data-symbol="F" data-number="9" data-name="Fluor" style="grid-row: 2; grid-column: 17;">F</div>
+    <div class="element gaz-szlachetny" data-symbol="Ne" data-number="10" data-name="Neon" style="grid-row: 2; grid-column: 18;">Ne</div>
+
+    <!-- Pierwiastki w trzecim wierszu -->
+    <div class="element metal-alkaliczny" data-symbol="Na" data-number="11" data-name="Sód" style="grid-row: 3; grid-column: 1;">Na</div>
+    <div class="element metal-ziem-alkaliczny" data-symbol="Mg" data-number="12" data-name="Magnez" style="grid-row: 3; grid-column: 2;">Mg</div>
+    <div class="element metal" data-symbol="Al" data-number="13" data-name="Glin" style="grid-row: 3; grid-column: 13;">Al</div>
+    <div class="element półmetal" data-symbol="Si" data-number="14" data-name="Krzem" style="grid-row: 3; grid-column: 14;">Si</div>
+    <div class="element niemetal" data-symbol="P" data-number="15" data-name="Fosfor" style="grid-row: 3; grid-column: 15;">P</div>
+    <div class="element niemetal" data-symbol="S" data-number="16" data-name="Siarka" style="grid-row: 3; grid-column: 16;">S</div>
+    <div class="element niemetal" data-symbol="Cl" data-number="17" data-name="Chlor" style="grid-row: 3; grid-column: 17;">Cl</div>
+    <div class="element gaz-szlachetny" data-symbol="Ar" data-number="18" data-name="Argon" style="grid-row: 3; grid-column: 18;">Ar</div>
+
+</div>
+
+
 <div class="text-center">
     <div id="index_title">
         <p class="large_font">@Localizer["PeriodicTable"]</p>

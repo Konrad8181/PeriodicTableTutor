@@ -1,13 +1,14 @@
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
+using PeriodicTableTutor;
 using PeriodicTableTutor.Data;
 using PeriodicTableTutor.Models.Entities;
+using PeriodicTableTutor.Providers;
 using PeriodicTableTutor.Services;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services
     .AddControllersWithViews()
     .AddRazorRuntimeCompilation()
@@ -26,6 +27,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.SupportedUICultures = supportedCultures;
 });
 builder.Services.AddSingleton<ElementModel>();
+builder.Services.AddSingleton<IElementsProvider, ElementsProvider>();
 builder.Services.AddDbContext<ElementModelContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ElementsDatabase")));
 builder.Services.AddScoped<ElementsController>();
 
