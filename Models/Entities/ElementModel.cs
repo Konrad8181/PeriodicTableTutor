@@ -54,5 +54,12 @@ namespace PeriodicTableTutor.Models.Entities
 
         [NotMapped]
         public string TypeDescription => Type.ToString().ToSentenceCase();
+
+        [NotMapped]
+        public int Column { get; set; }
+
+        [NotMapped]
+        public int Row { get; set; }
+
     }
 }

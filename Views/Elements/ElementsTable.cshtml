@@ -5,16 +5,10 @@
 
 <p>Periodic table elements.</p> 
 
-@foreach (var element in Model)
-{
-    <span id="up">
-        @element.Protons
-    </span>
-    <span id="down">
-        @element.MassNumber
-    </span>
-    <span class="large_font">
-        @element.ShortName
-    </span> 
-    <hr>
-}
+
+<div class="periodic-table">
+    @foreach (var element in Model)
+    {
+        <div class="element" style="grid-row: @(element.Row); grid-column: @(element.Column);">@element.ShortName</div>
+    }
+</div> 

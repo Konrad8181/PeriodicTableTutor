@@ -1,6 +1,6 @@
 ﻿using PeriodicTableTutor.Models.Entities;
 
-namespace PeriodicTableTutor
+namespace PeriodicTableTutor.Interfaces
 {
     public interface IElementsProvider
     {

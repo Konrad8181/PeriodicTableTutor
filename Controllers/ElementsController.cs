@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using PeriodicTableTutor.Data;
 using PeriodicTableTutor.Enmus;
+using PeriodicTableTutor.Interfaces;
 using PeriodicTableTutor.Models.Entities;
 
 namespace PeriodicTableTutor.Services
@@ -13,19 +14,24 @@ namespace PeriodicTableTutor.Services
 
         private readonly IElementsProvider _elementsProvider;
 
+        private readonly IPeriodicTableDataProvider _periodicTableDataProvider;
+
         public ICollection<ElementModel> Elements { get; private set; }
 
         public ElementsController(
+            IPeriodicTableDataProvider periodicTableDataProvider,
             IElementsProvider elementsProvider,
             ElementModelContext elementModelContext,
             IStringLocalizer<ElementsController> localizer)
         {
+            _periodicTableDataProvider = periodicTableDataProvider;
             _elementsProvider = elementsProvider;
             _dbContext = elementModelContext;
             Elements = new List<ElementModel>(_dbContext.Elements);
             _dbContext.SavedChanges += OnSavedChanges;
             _dbContext.SaveChangesFailed += OnSaveChangesFailed;
             DatabaseSanityCheck();
+            AssignTablePositions();
         }
 
         public IActionResult ElementsTable() => View(Elements);
@@ -55,9 +61,18 @@ namespace PeriodicTableTutor.Services
         {
             if (Elements.Count == 0)
             {
-
                 _dbContext.Elements.AddRange(_elementsProvider.GetElements());
                 _dbContext.SaveChanges();
+            }
+        }
+
+        private void AssignTablePositions()
+        {
+            foreach (var element in Elements)
+            {
+                var (column, row) = _periodicTableDataProvider.GetElementLocalizationByShortName(element.ShortName);
+                element.Column = column;
+                element.Row = row;
             }
         }
 

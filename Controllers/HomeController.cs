@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using PeriodicTableTutor.Enmus;
+using PeriodicTableTutor.Interfaces;
 using PeriodicTableTutor.Models;
 using PeriodicTableTutor.Services;
 using System.Diagnostics;
@@ -10,18 +11,24 @@ namespace PeriodicTableTutor.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
 
-    private readonly ElementsController _elementsController;
-
-    public List<ElementDescriptor> Descriptors { get; set; }
+    private readonly IPeriodicTableDataProvider _periodicTableDataProvider;
 
     private readonly IStringLocalizer<HomeController> _localizer;
 
-    public HomeController(ILogger<HomeController> logger,
+    private readonly ElementsController _elementsController;
+
+    private readonly ILogger<HomeController> _logger;
+
+    public List<ElementDescriptor> Descriptors { get; set; }
+
+    public HomeController(
+        IPeriodicTableDataProvider periodicTableDataProvider,
+        ILogger<HomeController> logger,
         ElementsController elementsController,
         IStringLocalizer<HomeController> localizer)
     {
+        _periodicTableDataProvider = periodicTableDataProvider;
         _elementsController = elementsController;
         _logger = logger;
         _localizer = localizer;
