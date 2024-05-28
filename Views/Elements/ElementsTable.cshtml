@@ -1,14 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Elements page";
+    ViewData["Language"] = @Localizer["Language"];
 }
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
 <h1>@ViewData["Title"]</h1>
 
-<p>Periodic table elements.</p> 
+<p>Periodic table elements.</p>
 
 
 <div class="periodic-table">
     @foreach (var element in Model)
     {
-        <div class="element" style="grid-row: @(element.Row); grid-column: @(element.Column);">@element.ShortName</div>
+        var className = $"element {element.Type}";
+        <a href="@Url.Action("SpecificElement", "Elements", new { name = @element.ShortName })" style="text-decoration:none; color: Black; position: relative; grid-row: @(element.Row); grid-column: @(element.Column);">
+            <div class="@className" data-number="@(element.AtomicMass)" data-name="@(element.LatinName)" >@element.ShortName</div>
+        </a>
     }
 </div> 
