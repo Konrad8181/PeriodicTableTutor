@@ -135,8 +135,8 @@
   <data name="Lanthanide" xml:space="preserve">
     <value>Latnynowce</value>
   </data>
-  <data name="MendelPeriodicTable" xml:space="preserve">
-    <value>Tablica okresowa pierwiastków Mendelejeva</value>
+  <data name="LearnAboutElements" xml:space="preserve">
+    <value>Dowiedz się więcej o pierwiastkach chemicznych</value>
   </data>
   <data name="Metal" xml:space="preserve">
     <value>Metale</value>
@@ -151,7 +151,10 @@
     <value>Niemetale</value>
   </data>
   <data name="PeriodicTable" xml:space="preserve">
-    <value>Tablica Okresowa</value>
+    <value>Tablica okresowa</value>
+  </data>
+  <data name="PeriodicTableTutor" xml:space="preserve">
+    <value>Przewodnik po układzie okresowym</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Szukaj</value>

@@ -135,8 +135,8 @@
   <data name="Lanthanide" xml:space="preserve">
     <value>Lanthanides</value>
   </data>
-  <data name="MendelPeriodicTable" xml:space="preserve">
-    <value>Mendeleev's Periodic Table of Elements</value>
+  <data name="LearnAboutElements" xml:space="preserve">
+    <value>Learn about chemical elements</value>
   </data>
   <data name="Metal" xml:space="preserve">
     <value>Metals</value>
@@ -151,7 +151,10 @@
     <value>Nonmetals</value>
   </data>
   <data name="PeriodicTable" xml:space="preserve">
-    <value>Periodic Table</value>
+    <value>Periodic table</value>
+  </data>
+  <data name="PeriodicTableTutor" xml:space="preserve">
+    <value>Periodic Table Tutor</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>

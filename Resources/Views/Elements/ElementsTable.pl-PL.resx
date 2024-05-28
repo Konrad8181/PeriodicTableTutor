@@ -117,61 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Actinide" xml:space="preserve">
-    <value>Aktynowce</value>
-  </data>
-  <data name="Alkali metal" xml:space="preserve">
-    <value>Metale alkaiczne</value>
-  </data>
-  <data name="Alkaline earth metal" xml:space="preserve">
-    <value>Metale ziem alkaicznych</value>
-  </data>
-  <data name="ElementsPage" xml:space="preserve">
-    <value>Karta Pierwiastków</value>
-  </data>
-  <data name="Halogen" xml:space="preserve">
-    <value>Halogenki</value>
+  <data name="ElementsTable" xml:space="preserve">
+    <value>Tablica okresowa</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Język</value>
   </data>
-  <data name="Lanthanide" xml:space="preserve">
-    <value>Latnynowce</value>
-  </data>
-  <data name="MendelPeriodicTable" xml:space="preserve">
-    <value>Tablica okresowa pierwiastków Mendelejeva</value>
-  </data>
-  <data name="Metal" xml:space="preserve">
-    <value>Metale</value>
-  </data>
-  <data name="Metalloid" xml:space="preserve">
-    <value>Metalonoidy</value>
-  </data>
-  <data name="Noble gas" xml:space="preserve">
-    <value>Gazy szlachetne</value>
-  </data>
-  <data name="Nonmetal" xml:space="preserve">
-    <value>Niemetale</value>
-  </data>
-  <data name="NumberOfElements" xml:space="preserve">
-    <value>Liczba pierwiastków:&amp;nbsp;</value>
-  </data>
-  <data name="PeriodicTable" xml:space="preserve">
-    <value>Tablica Okresowa</value>
-  </data>
-  <data name="Search" xml:space="preserve">
-    <value>Szukaj</value>
-  </data>
-  <data name="SearchFor" xml:space="preserve">
-    <value>Szukaj dla...</value>
-  </data>
-  <data name="Transactinide" xml:space="preserve">
-    <value>Super ciężkie</value>
-  </data>
-  <data name="Transition metal" xml:space="preserve">
-    <value>Metale przejściowe</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>Witaj</value>
+  <data name="PeriodicTableOfElements" xml:space="preserve">
+    <value>Tablica okresowa pierwiastków</value>
   </data>
 </root>

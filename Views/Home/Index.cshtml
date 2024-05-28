@@ -8,23 +8,26 @@
 
 <div class="text-center">
     <div id="index_title">
-        <p class="large_font">@Localizer["PeriodicTable"]</p>
+        <p class="large_font">@Localizer["PeriodicTableTutor"]</p>
         <div>
             <p style="margin-bottom:1cm;"></p>
         </div>
-        <p class="small_font">@Localizer["MendelPeriodicTable"]</p>
+        <p class="medium_font">@Localizer["LearnAboutElements"]</p>
     </div> 
 </div>
+ 
 
-<div id="flatElementButton">
-    <a href="@Url.Action("ElementsTable", "Elements")" style="text-decoration:none; color: Black;">
-        <div>
-            <span id="mainText">Table</span>  
-        </div>
-    </a>
-</div>
+<div id="gridFlatContainer">
 
-<div id="gridFlatContainer"> 
+    <div class="col-md-2-cell cell-0" id="flatElementButton">
+        <a href="@Url.Action("ElementsTable", "Elements")" style="text-decoration:none; color: Black;">
+            <div>
+                <span id="mainText">TB</span>
+                <div class="Unknown"></div>
+                <span id="subText">@Localizer["PeriodicTable"]</span>
+            </div>
+        </a>
+    </div>
     @foreach (var element in Model)
     {
         <div class=@(String.Format("col-md-2-cell cell-{0}", @element.Index)) id="flatElementButton">

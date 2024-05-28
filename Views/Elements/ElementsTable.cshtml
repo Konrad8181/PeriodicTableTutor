@@ -1,13 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Elements page";
+    ViewData["Title"] = @Localizer["ElementsTable"];
     ViewData["Language"] = @Localizer["Language"];
 }
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
 
-<h1>@ViewData["Title"]</h1>
-
-<p>Periodic table elements.</p>
+<div>
+    <p class="large_font">@ViewData["Title"]</p> 
+</div>
+ 
+<p>@Localizer["PeriodicTableOfElements"]</p>
 
 
 <div class="periodic-table">
