@@ -117,7 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actinide" xml:space="preserve">
+    <value>Actinide</value>
+  </data>
+  <data name="AlkaliMetal" xml:space="preserve">
+    <value>Alkali metal</value>
+  </data>
+  <data name="AlkalineEarthMetal" xml:space="preserve">
+    <value>Alkaline earth metal</value>
+  </data>
+  <data name="artificial" xml:space="preserve">
+    <value>Artificial</value>
+  </data>
+  <data name="AtomicMass" xml:space="preserve">
+    <value>Atomic mass</value>
+  </data>
+  <data name="Column" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="Density" xml:space="preserve">
+    <value>Density</value>
+  </data>
+  <data name="Discoverer" xml:space="preserve">
+    <value>Discoverer</value>
+  </data>
+  <data name="Electrons" xml:space="preserve">
+    <value>Electrons</value>
+  </data>
   <data name="ElementPage" xml:space="preserve">
     <value>Element Page</value>
+  </data>
+  <data name="gas" xml:space="preserve">
+    <value>Gas</value>
+  </data>
+  <data name="Halogen" xml:space="preserve">
+    <value>Halogen</value>
+  </data>
+  <data name="Lanthanide" xml:space="preserve">
+    <value>Lanthanide</value>
+  </data>
+  <data name="liq" xml:space="preserve">
+    <value>Liquid</value>
+  </data>
+  <data name="MassNumber" xml:space="preserve">
+    <value>Mass number</value>
+  </data>
+  <data name="Metal" xml:space="preserve">
+    <value>Metal</value>
+  </data>
+  <data name="Metalloid" xml:space="preserve">
+    <value>Metalloid</value>
+  </data>
+  <data name="Neutrons" xml:space="preserve">
+    <value>Neutrons</value>
+  </data>
+  <data name="NobleGas" xml:space="preserve">
+    <value>Noble gas</value>
+  </data>
+  <data name="Nonmetal" xml:space="preserve">
+    <value>Nonmetal</value>
+  </data>
+  <data name="Phase" xml:space="preserve">
+    <value>Phase</value>
+  </data>
+  <data name="Protons" xml:space="preserve">
+    <value>Protons</value>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="solid" xml:space="preserve">
+    <value>Solid</value>
+  </data>
+  <data name="Transactinide" xml:space="preserve">
+    <value>Transactinide</value>
+  </data>
+  <data name="TransitionMetal" xml:space="preserve">
+    <value>Transition metal</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Year of dicovery</value>
   </data>
 </root>

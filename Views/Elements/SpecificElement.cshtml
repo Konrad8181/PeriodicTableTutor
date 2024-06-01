@@ -8,29 +8,62 @@
 <p class="huge_font">@Model.LatinName</p>
 <div class="@Model.Type">
 </div>
-
-<div style="margin: -40px 0px 0px 0px;">
-    <p style="font-size: 250px;">
-        @Model.ShortName
-    </p>
-    <p class="large_font" style="text-align: center; margin: 0px 0px 0px 40px">
-        @Model.TypeDescription
-    </p>
+<div class="row">
+    <div class="column"> 
+        <div style="font-size: 250px; margin: -50px 0px 0px 0px;">
+            @Model.ShortName
+        </div>
+        <div class="large_font" style="font-weight: lighter; margin: -50px 0px 0px 0px;">
+            @Localizer[$"{@Model.Type}"]
+        </div>
+    </div>
+    <div class="column">
+        <div class=specific-element>
+            <div class="specific-element-header-bold">
+                <span>@Localizer["MassNumber"]</span>
+                <span>@Model.MassNumber</span>
+            </div>
+            <div class="specific-element-header-normal">
+                <span>@Localizer["AtomicMass"]</span>
+                <span>@Model.AtomicMass</span>
+            </div>
+            <div class="specific-element-header-bold">
+                <span>@Localizer["Electrons"]</span>
+                <span>@Model.Electrons</span>
+            </div>
+            <div class="specific-element-header-normal">
+                <span>@Localizer["Protons"]</span>
+                <span>@Model.Protons</span>
+            </div>
+            <div class="specific-element-header-bold">
+                <span>@Localizer["Neutrons"]</span>
+                <span>@Model.Neutrons</span>
+            </div>
+            <div class="specific-element-header-normal">
+                <span>@Localizer["Density"]</span>
+                <span>@Model.Density</span>
+            </div>
+            <div class="specific-element-header-bold">
+                <span>@Localizer["Phase"]</span>
+                <span>@Localizer[$"{@Model.Phase}"]</span>
+            </div>
+            <div class="specific-element-header-normal">
+                <span>@Localizer["Year"]</span>
+                <span>@Model.Year</span>
+            </div>
+            <div class="specific-element-header-bold">
+                <span>@Localizer["Discoverer"]</span>
+                <span>@Model.Discoverer</span>
+            </div>
+            <div class="specific-element-header-normal">
+                <span>@Localizer["Column"]</span>
+                <span>@Model.Column</span>
+            </div>
+            <div class="specific-element-header-bold">
+                <span>@Localizer["Row"]</span>
+                <span>@Model.Row</span>
+            </div>
+        </div>
+    </div>
 </div>
-<div id=content_container>
-    <div id=sub_nav >
-        Protons: @Model.Protons
-    </div>
-    <div id=content>
-        Neutrons: @Model.Neutrons
-    </div>
-    <div id=content>
-        Electrons: @Model.Electrons
-    </div>
-    <div id=content>
-        Atomic mass: @Model.AtomicMass
-    </div>
-    <div id=content>
-        Density: @Model.Density
-    </div>
-</div> 
+

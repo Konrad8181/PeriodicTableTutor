@@ -117,7 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actinide" xml:space="preserve">
+    <value>Aktynowiec</value>
+  </data>
+  <data name="AlkaliMetal" xml:space="preserve">
+    <value>Metal alkaiczny</value>
+  </data>
+  <data name="AlkalineEarthMetal" xml:space="preserve">
+    <value>Metal ziem alkaicznych</value>
+  </data>
+  <data name="artificial" xml:space="preserve">
+    <value>Sztuczny</value>
+  </data>
+  <data name="AtomicMass" xml:space="preserve">
+    <value>Liczba atomowa</value>
+  </data>
+  <data name="Column" xml:space="preserve">
+    <value>Grupa</value>
+  </data>
+  <data name="Density" xml:space="preserve">
+    <value>Gęstość</value>
+  </data>
+  <data name="Discoverer" xml:space="preserve">
+    <value>Odkrywca</value>
+  </data>
+  <data name="Electrons" xml:space="preserve">
+    <value>Elektrony</value>
+  </data>
   <data name="ElementPage" xml:space="preserve">
-    <value>Karta pierwasta</value>
+    <value>Karta pierwiastka</value>
+  </data>
+  <data name="gas" xml:space="preserve">
+    <value>Gazowy</value>
+  </data>
+  <data name="Halogen" xml:space="preserve">
+    <value>Halogen</value>
+  </data>
+  <data name="Lanthanide" xml:space="preserve">
+    <value>Latnynowiec</value>
+  </data>
+  <data name="liq" xml:space="preserve">
+    <value>Ciekły</value>
+  </data>
+  <data name="MassNumber" xml:space="preserve">
+    <value>Liczba masowa</value>
+  </data>
+  <data name="Metal" xml:space="preserve">
+    <value>Metal</value>
+  </data>
+  <data name="Metalloid" xml:space="preserve">
+    <value>Metalonoid</value>
+  </data>
+  <data name="Neutrons" xml:space="preserve">
+    <value>Neutrony</value>
+  </data>
+  <data name="NobleGas" xml:space="preserve">
+    <value>Gaz szlachetny</value>
+  </data>
+  <data name="Nonmetal" xml:space="preserve">
+    <value>Niemetal</value>
+  </data>
+  <data name="Phase" xml:space="preserve">
+    <value>Stan</value>
+  </data>
+  <data name="Protons" xml:space="preserve">
+    <value>Protony</value>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>Okres</value>
+  </data>
+  <data name="solid" xml:space="preserve">
+    <value>Stały</value>
+  </data>
+  <data name="Transactinide" xml:space="preserve">
+    <value>Super ciężki</value>
+  </data>
+  <data name="TransitionMetal" xml:space="preserve">
+    <value>Metal przejściowy</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Rok odkrycia</value>
   </data>
 </root>
