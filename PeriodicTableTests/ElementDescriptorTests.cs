@@ -5,22 +5,22 @@ namespace PeriodicTableTests
 {
     public class ElementDescriptorTests
     {
-        [Xunit.Theory]
-        [Xunit.InlineData(EElementType.Actinide, "AC")]
-        [Xunit.InlineData(EElementType.AlkaliMetal, "AM")]
-        [Xunit.InlineData(EElementType.AlkalineEarthMetal, "AE")]
-        [Xunit.InlineData(EElementType.Metalloid, "MT")]
-        [Xunit.InlineData(EElementType.Metal, "ME")]
-        [Xunit.InlineData(EElementType.Nonmetal, "NO")]
-        [Xunit.InlineData(EElementType.Halogen, "HA")]
-        [Xunit.InlineData(EElementType.NobleGas, "NG")]
-        [Xunit.InlineData(EElementType.Transactinide, "TA")]
-        [Xunit.InlineData(EElementType.TransitionMetal, "TM")]
-        [Xunit.InlineData(EElementType.Lanthanide, "LN")]
+        [Theory]
+        [InlineData(EElementType.Actinide, "AC")]
+        [InlineData(EElementType.AlkaliMetal, "AM")]
+        [InlineData(EElementType.AlkalineEarthMetal, "AE")]
+        [InlineData(EElementType.Metalloid, "MT")]
+        [InlineData(EElementType.Metal, "ME")]
+        [InlineData(EElementType.Nonmetal, "NO")]
+        [InlineData(EElementType.Halogen, "HA")]
+        [InlineData(EElementType.NobleGas, "NG")]
+        [InlineData(EElementType.Transactinide, "TA")]
+        [InlineData(EElementType.TransitionMetal, "TM")]
+        [InlineData(EElementType.Lanthanide, "LN")]
         public void Test1(EElementType type, string expectedShortName)
         {
             var descriptor = new ElementDescriptor(type, 0);
-            Xunit.Assert.Equal(expectedShortName, descriptor.ShortName);
+            Assert.Equal(expectedShortName, descriptor.ShortName);
         }
     }
 }

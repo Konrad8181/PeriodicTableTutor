@@ -24,7 +24,7 @@ namespace PeriodicTableTutor.Providers
             return _elements;
         }
 
-        private void ReadBytesToElements(byte[] data)
+        public void ReadBytesToElements(byte[] data)
         {
             var lines = Encoding.Default.GetString(data).Split('\n');
             var headers = lines[0].Split(',').ToList();
