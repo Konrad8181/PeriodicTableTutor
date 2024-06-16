@@ -3,6 +3,9 @@ using PeriodicTableTutor.Extensions;
 
 namespace PeriodicTableTutor.Models
 {
+    /// <summary>
+    /// Element descriptor definition
+    /// </summary>
     public struct ElementDescriptor
     {
         public EElementType Type { get; set; }
@@ -21,6 +24,10 @@ namespace PeriodicTableTutor.Models
             Index = index;
         }
 
+        /// <summary>
+        /// Creates short name by Type
+        /// </summary>
+        /// <returns></returns>
         private readonly string GetShortName()
         {
             var type = Type.ToString();

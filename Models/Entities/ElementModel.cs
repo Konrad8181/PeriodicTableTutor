@@ -5,6 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PeriodicTableTutor.Models.Entities
 {
+    /// <summary>
+    /// Element model definition
+    /// </summary>
     public class ElementModel
     {
         [Key]

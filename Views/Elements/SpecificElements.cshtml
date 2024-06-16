@@ -15,8 +15,10 @@
 </div>
 <div></div>
 
+@* Loop through Elements *@
 @foreach (var element in Model)
 {
+    @* UI element presenter as action invoker (link to specific element) *@
     <a href="@Url.Action("SpecificElement", "Elements", new { name = @element.ShortName })" style="text-decoration:none; color: Black;">
 
         <div class="number-container">

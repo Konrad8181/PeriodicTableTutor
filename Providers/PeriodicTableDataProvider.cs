@@ -6,22 +6,26 @@ namespace PeriodicTableTutor.Providers
     {
         private Dictionary<string, (int column, int row)> _periodicTablePositionsByShortName;
 
-
         public PeriodicTableDataProvider()
         {
             _periodicTablePositionsByShortName = [];
             InitializePositions();
         }
 
+        /// <summary>
+        /// Get element coordinates by short name
+        /// </summary>
+        /// <param name="shortName"></param>
+        /// <returns>Column and row assigned for given element by its short name</returns>
         public (int column, int row) GetElementLocalizationByShortName(string shortName)
         {
-            if (_periodicTablePositionsByShortName.ContainsKey(shortName))
-            {
-                return _periodicTablePositionsByShortName[shortName];
-            }
-            return default;
+            return _periodicTablePositionsByShortName.TryGetValue(shortName, out (int column, int row) value) ? value : default;
         }
 
+
+        /// <summary>
+        /// Assign elements positions dictionary
+        /// </summary>
         private void InitializePositions()
         {
             _periodicTablePositionsByShortName = new Dictionary<string, (int column, int row)>()

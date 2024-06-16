@@ -13,6 +13,7 @@
 
 
 <div class="periodic-table">
+    @* Loop through elements and positioning them in table by its column and row values *@
     @foreach (var element in Model)
     {
         var className = $"element {element.Type}";

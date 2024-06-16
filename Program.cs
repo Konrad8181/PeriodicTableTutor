@@ -14,8 +14,10 @@ builder.Services
     .AddRazorRuntimeCompilation()
     .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
 
+// Set localization resources file path
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
+// Define supported languages codes
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     var supportedCultures = new[]
@@ -26,6 +28,8 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 
     options.SupportedUICultures = supportedCultures;
 });
+
+// Dependency injection
 builder.Services.AddSingleton<ElementModel>();
 builder.Services.AddSingleton<IElementsProvider, ElementsProvider>();
 builder.Services.AddSingleton<IPeriodicTableDataProvider, PeriodicTableDataProvider>();

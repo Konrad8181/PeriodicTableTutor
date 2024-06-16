@@ -9,21 +9,27 @@ namespace PeriodicTableTutor.Providers
 {
     public class ElementsProvider : IElementsProvider
     {
+        /// <summary>
+        /// Elements data url
+        /// </summary>
         private const string ElementsRepositoryFallbackAddress = "https://gist.githubusercontent.com/GoodmanSciences/c2dd862cd38f21b0ad36b8f96b4bf1ee/raw/1d92663004489a5b6926e944c1b3d9ec5c40900e/Periodic%2520Table%2520of%2520Elements.csv";
 
-        private readonly ICollection<ElementModel> _elements;
+        private readonly ICollection<ElementModel> _elements = [];
 
-        public ElementsProvider()
-        {
-            _elements = new List<ElementModel>();
-        }
-
+        /// <summary>
+        /// Get elements
+        /// </summary>
+        /// <returns>Elements read from remote database</returns>
         public ICollection<ElementModel> GetElements()
         {
             ReadBytesToElements(DownloadFile());
             return _elements;
         }
 
+        /// <summary>
+        /// Parse byte data elements
+        /// </summary>
+        /// <param name="data"></param>
         public void ReadBytesToElements(byte[] data)
         {
             var lines = Encoding.Default.GetString(data).Split('\n');
@@ -72,12 +78,32 @@ namespace PeriodicTableTutor.Providers
             }
         }
 
+        /// <summary>
+        /// Downlad file from url
+        /// </summary>
+        /// <returns>Downloaded bytes data</returns>
         private static byte[] DownloadFile()
         {
             var client = new WebClient();
             return client.DownloadData(ElementsRepositoryFallbackAddress);
         }
 
+        /// <summary>
+        /// Create new element
+        /// </summary>
+        /// <param name="shortName"></param>
+        /// <param name="name"></param>
+        /// <param name="latinName"></param>
+        /// <param name="protons"></param>
+        /// <param name="neutrons"></param>
+        /// <param name="electrons"></param>
+        /// <param name="atomicMass"></param>
+        /// <param name="density"></param>
+        /// <param name="phase"></param>
+        /// <param name="type"></param>
+        /// <param name="year"></param>
+        /// <param name="discoverer"></param>
+        /// <returns>New element</returns>
         private static ElementModel CreateNewElement(
             string shortName,
             string name,

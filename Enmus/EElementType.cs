@@ -1,5 +1,8 @@
 ﻿namespace PeriodicTableTutor.Enmus
 {
+    /// <summary>
+    /// Perdiodic element type definitions
+    /// </summary>
     public enum EElementType
     {
         Metal,

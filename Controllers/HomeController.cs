@@ -36,6 +36,12 @@ public class HomeController : Controller
         CreateDescriptors();
     }
 
+    /// <summary>
+    /// Sets current language by language code
+    /// </summary>
+    /// <param name="language"></param>
+    /// <param name="returnUrl"></param>
+    /// <returns>Local redirection for given url</returns>
     public IActionResult SetLanguage(string language, string returnUrl)
     {
         var cultureInfo = new CultureInfo(language);
@@ -44,22 +50,28 @@ public class HomeController : Controller
         return LocalRedirect(returnUrl);
     }
 
+    /// <summary>
+    /// Get home view
+    /// </summary>
+    /// <returns>View with descriptors</returns>
     public IActionResult Index()
     {
         return View(Descriptors);
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
+    /// <summary>
+    /// DEfault error view
+    /// </summary>
+    /// <returns>Default error view</returns>
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
+    /// <summary>
+    /// Creates descriptors based on enum (EElementType)
+    /// </summary>
     private void CreateDescriptors()
     {
         foreach (var item in Enum.GetValues(typeof(EElementType)).Cast<EElementType>().Select((type, i) => new { i, type }))
