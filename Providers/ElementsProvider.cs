@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 
 namespace PeriodicTableTutor.Providers
-{
+{ 
     public class ElementsProvider : IElementsProvider
     {
         /// <summary>

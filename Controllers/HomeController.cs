@@ -11,7 +11,6 @@ namespace PeriodicTableTutor.Controllers;
 
 public class HomeController : Controller
 {
-
     private readonly IPeriodicTableDataProvider _periodicTableDataProvider;
 
     private readonly IStringLocalizer<HomeController> _localizer;

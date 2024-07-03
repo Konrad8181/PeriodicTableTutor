@@ -24,6 +24,8 @@
 @* Loop through found elements by given phrase *@
 @foreach (var element in Model)
 {
+    <a href="@Url.Action("SpecificElement", "Elements", new { name = @element.ShortName })" style="text-decoration:none; color: Black;">
+
     <span id="up">
         @element.Protons
     </span>
@@ -34,4 +36,5 @@
         @element.ShortName
     </span> 
     <hr>
+    </a>
 }

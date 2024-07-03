@@ -29,7 +29,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.SupportedUICultures = supportedCultures;
 });
 
-// Dependency injection
+// Dependency injection - DI
 builder.Services.AddSingleton<ElementModel>();
 builder.Services.AddSingleton<IElementsProvider, ElementsProvider>();
 builder.Services.AddSingleton<IPeriodicTableDataProvider, PeriodicTableDataProvider>();

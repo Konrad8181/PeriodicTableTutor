@@ -62,6 +62,7 @@ namespace PeriodicTableTutor.Services
         /// <returns>View with found elements for given phrase</returns>
         public IActionResult SearchElements(string searchString)
         {
+            ViewData["SearchString"] = searchString;
             return View(Elements.Where(x => x.LatinName.Contains(searchString, StringComparison.InvariantCultureIgnoreCase)).ToList());
         }
 
